@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SauceDemo Master Regression Suite" parallel="none" thread-count="1" verbose="2">
+
+    <!-- Global Test Listeners: Failure Screenshots & Allure Hooks -->
+    <listeners>
+        <listener class-name="org.example.listeners.TestListener"/>
+    </listeners>
+
+    <!--
+      Strict Sequential Execution:
+      - preserve-order="true" ensures classes run in the exact top-to-bottom order listed below.
+      - Each test method starts and finishes completely before the next one starts.
+    -->
+    <test name="SauceDemo Sequential End-to-End Flow" preserve-order="true">
+        <classes>
+            <!-- Step 1: Authentication & Security Route Guards -->
+            <class name="org.example.tests.auth.LoginTest"/>
+
+            <!-- Step 2: Catalog Grid & 4-Way Sorting -->
+            <class name="org.example.tests.inventory.InventoryTest"/>
+
+            <!-- Step 3: Product Details & Attribute Integrity -->
+            <class name="org.example.tests.product.ProductDetailsTest"/>
+
+            <!-- Step 4: Shopping Cart & Dynamic Badge DOM Lifecycle -->
+            <class name="org.example.tests.cart.ShoppingCartTest"/>
+
+            <!-- Step 5: End-to-End Checkout & Mathematical Accuracy -->
+            <class name="org.example.tests.checkout.CheckoutE2ETest"/>
+
+            <!-- Step 6: Logout, Protected Routes & Cart Persistence -->
+            <class name="org.example.tests.session.SessionLogoutTest"/>
+        </classes>
+    </test>
+
+</suite>
