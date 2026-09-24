@@ -41,5 +41,3 @@ allure-results/
 allure-report/
 target/
 .idea/
-logs/
-screenshots/failures/
